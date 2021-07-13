@@ -1,12 +1,17 @@
 pragma solidity ^0.5.16;
 
 contract PudimToken {
-    //Constructor
-    //Numero total de Tokens
-    //Ler o numero total de tokens
+
+    string public name =  "Pudim Token";
+
     uint256 public totalSupply;
 
-    constructor() public {
-        totalSupply = 1000000;
+    mapping(address => uint) public balanceOf;
+
+    constructor(uint256 _initialSupply) public {
+        balanceOf[msg.sender] = _initialSupply;
+        totalSupply = _initialSupply;
+
+
     }
 }
