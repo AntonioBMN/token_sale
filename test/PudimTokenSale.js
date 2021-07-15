@@ -78,9 +78,9 @@ contract('PudimTokenSale',function(accounts){
         }).then(function(balance){
             assert.equal(balance.toNumber(), 999990, 'Retorna os tokens não vendidos ao adm')
             //Verifica se token price foi resetado e SelfDistruct foi chamado
-            //return tokenSaleInstance.tokenPrice();
-        })//.then(function(price){
-            //assert.equal(price.toNumber(), 0, 'TokenPrice foi resetado')
-        })
+            return tokenInstance.balanceOf(tokenSaleInstance.address);
+        }).then(function(price){
+            assert.equal(price.toNumber(), 0, 'TokenPrice foi resetado')
+        });
     });
 })
