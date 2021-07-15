@@ -24,7 +24,7 @@ App = {
         
         return App.initContracts();
     },
-
+    //Inicia os contratos
     initContracts: function(){
         $.getJSON("PudimTokenSale.json",function(pudimTokenSale){
             App.contracts.PudimTokenSale = TruffleContract(pudimTokenSale);
